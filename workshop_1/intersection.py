@@ -24,14 +24,14 @@ def intersection(headA: LList, headB: LList) -> Node | None :
     curA = headA.head
     curB = headB.head
 
-    while curA.data != curB:
+    while curA.data != curB.data:
 
-        if curA.next == None:
+        if curA is None:
             curA = headB.head
         else:
             curA = curA.next
         
-        if curB.next == None:
+        if curB is None:
             curB = headA.head
         else:
             curB = curB.next
@@ -55,3 +55,5 @@ listB.append(5)
 
 rez = intersection(listA, listB)
 assert rez.data == 8, "Ошибка"
+
+print("OK")
